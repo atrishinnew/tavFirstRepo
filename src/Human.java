@@ -1,5 +1,4 @@
 public class Human {
-
     String surname;
     String name;
     String patronymic;
