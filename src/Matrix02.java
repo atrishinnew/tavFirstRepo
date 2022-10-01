@@ -5,8 +5,8 @@ public class Matrix02 {
     static int n,m;
     int [][] array = new int[n][m];
 
-    Matrix02(int n, int m) {
-        this.array = new int[n][m];
+    Matrix02(int[][] array) {
+       this.array = array;
     }
 
     //метод, который установит размерность матрицы
@@ -32,13 +32,27 @@ public class Matrix02 {
 
         //устанавливаем размерность матрицы
         setDimension();
-
-        Matrix02 firstMatrix = new Matrix02(n,m);
+        int [][] array1 = new int[n][m];
+        //чтобы при создании объекта класса Матрица отдать на вход массив, его где-то надо взять
+        //но до создания объекта, у меня еще нет массива (так как массив это поле класса)
+        //поэтому выше в main я вынужден еще создать "локальный" массив
+        Matrix02 firstMatrix = new Matrix02(array1);
         //заполняем матрицу мусором
         firstMatrix.setMatrix();
 
-        System.out.println("Привет");
+        //setDimension();
+        //int [][] array2 = new int[n][m];
+        //Matrix02 secondMatrix = new Matrix02(array2);
+        //заполняем матрицу мусором
+        //secondMatrix.setMatrix();
+
+        System.out.println("=====");
+
         System.out.println(Arrays.deepToString(firstMatrix.array));
+        //тут я не пойму, почему "локальный" массив array1 также заполняется, как и firstMatrix.array???
+        System.out.println(Arrays.deepToString(array1));
+        //System.out.println(Arrays.deepToString(secondMatrix.array));
+        //System.out.println(Arrays.deepToString(firstMatrix.array));
     }
 
 }
