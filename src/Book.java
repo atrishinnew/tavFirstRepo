@@ -4,16 +4,17 @@ public class Book {
     int year;
     String creator;
 
+    //пустой конструктор
+    Book() {
+    }
+
+
     //конструктор с полями
     Book(String name, int pageCount, int year, String creator) {
         this.name = name;
         this.pageCount = pageCount;
         this.year = year;
         this.creator = creator;
-    }
-
-    Book() {
-
     }
 
     //метод get
