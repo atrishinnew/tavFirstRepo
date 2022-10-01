@@ -33,12 +33,18 @@ public class Matrix02 {
         //устанавливаем размерность матрицы
         setDimension();
         int [][] array1 = new int[n][m];
+
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array1[0].length; j++) {
+                array1[i][j] = j;
+            }
+        }
         //чтобы при создании объекта класса Матрица отдать на вход массив, его где-то надо взять
         //но до создания объекта, у меня еще нет массива (так как массив это поле класса)
         //поэтому выше в main я вынужден еще создать "локальный" массив
         Matrix02 firstMatrix = new Matrix02(array1);
         //заполняем матрицу мусором
-        firstMatrix.setMatrix();
+        //firstMatrix.setMatrix();
 
         //setDimension();
         //int [][] array2 = new int[n][m];
