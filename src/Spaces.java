@@ -21,9 +21,9 @@ public class Spaces {
     }
 
     //метод класса перевода текста в массив
-    public char[] convertToArray (String text) {
+   /*public char[] convertToArray (String text) {
         return text.toCharArray();
-    }
+    }*/
 
     //метод класса подсчета количества пробелов
     /*int doCountSpaces(char[] chArray) {
@@ -35,9 +35,20 @@ public class Spaces {
         }
         return count;
     }*/
-    int doCountSpaces(char[] chArray) {
+    /*int doCountSpaces(char[] chArray) {
         int count = 0;
         for (char symbol : chArray) {
+            if (symbol == ' ') {
+                count++;
+            }
+        }
+        return count;
+    }*/
+
+    //метод подсчета количества пробелов в строке
+    int doCountSpaces (String text) {
+        int count = 0;
+        for (char symbol : text.toCharArray()) {
             if (symbol == ' ') {
                 count++;
             }
@@ -46,10 +57,11 @@ public class Spaces {
     }
 
 
+
     public static void main(String[] args) {
         System.out.println("Введите текст");
         Spaces newSpaces = new Spaces(getInputText());
-        System.out.println("Количество пробелов: " + newSpaces.doCountSpaces(newSpaces.convertToArray(newSpaces.text)));
+        System.out.println("Количество пробелов: " + newSpaces.doCountSpaces(newSpaces.text));
 
     }
 
